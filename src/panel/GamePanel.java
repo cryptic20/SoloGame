@@ -8,10 +8,14 @@ import game_state.GameStateManager;
 
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements Runnable, KeyListener {
-	// dimensions
+
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int screenHeight = screenSize.height;
+		int screenWidth = screenSize.width;
+		
+		// dimensions
 		public static final int WIDTH = 320;
 		public static final int HEIGHT = 240;
-		public static final int SCALE = 2;
 		
 		// game thread
 		private Thread thread;
@@ -29,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		public GamePanel() {
 			super();
 			setPreferredSize(
-				new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+				new Dimension(screenWidth, screenHeight));
 			setFocusable(true);
 			requestFocus();
 		}
@@ -99,7 +103,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		private void drawToScreen() {
 			Graphics g2 = getGraphics();
 			g2.drawImage(image, 0, 0,
-					WIDTH * SCALE, HEIGHT * SCALE,
+					screenWidth, screenHeight,
 					null);
 			g2.dispose();
 		}

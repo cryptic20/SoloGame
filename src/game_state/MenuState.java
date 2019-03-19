@@ -56,7 +56,7 @@ public class MenuState extends GameState {
 		//draw title
 		g.setColor(titleColor);
 		g.setFont(titleFont);
-		g.drawString("Dungeon Ninja", 80, 70);
+		g.drawString("Test", 80, 70);
 		
 		//draw menu options
 		g.setFont(font);
@@ -92,7 +92,6 @@ public class MenuState extends GameState {
 		
 		if(k == KeyEvent.VK_UP) {
 			currentChoice--;
-			System.out.println(currentChoice%=len);
 			if(currentChoice < 0) {
 				currentChoice = len - 1;
 			}

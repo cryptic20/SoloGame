@@ -10,7 +10,8 @@ public class GameStateManager {
 
 	
 	public static final int MENUSTATE = 0;
-	public static final int LEVEL1STATE = 1;
+	public static final int SETTINGSTATE = 1;
+	public static final int LEVEL1STATE = 2;
 	
 	//constructor
 	public GameStateManager() {
