@@ -10,14 +10,15 @@ public class GameStateManager {
 
 	
 	public static final int MENUSTATE = 0;
-	public static final int SETTINGSTATE = 1;
-	public static final int LEVEL1STATE = 2;
+	public static final int LEVEL1STATE = 1;
 	
 	//constructor
 	public GameStateManager() {
 		gameStates = new ArrayList<GameState>();
-		currentState = 0;
+		currentState = MENUSTATE;
 		gameStates.add(new MenuState(this));
+		gameStates.add(new Level1State(this));
+
 	}
 	
 	public void setState(int state) {
